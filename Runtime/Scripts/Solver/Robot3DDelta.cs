@@ -72,7 +72,7 @@ namespace Preliy.Flange
         {
             for (var i = 0; i < _theta.Length; i++)
             {
-                _theta[i] = value[i] * Deg2Rad;
+                _theta[i] = value[i] * Deg2Rad + _frames[2 + i * 3].Config.Theta;
             }
 
             var t = _frames[1].Config.A - _frames[10].Config.A;
@@ -150,6 +150,11 @@ namespace Preliy.Flange
             _theta[0] = GetAngleOnZYPlane(position);
             _theta[1] = GetAngleOnZYPlane(Quaternion.AngleAxis(-120, Vector3.forward) * position);
             _theta[2] = GetAngleOnZYPlane(Quaternion.AngleAxis(120, Vector3.forward) * position);
+
+            for (var i = 0; i < _theta.Length; i++)
+            {
+                _theta[i] -= _frames[2 + i * 3].Config.Theta;
+            }
 
             return CreateSolution(_theta, configuration, ignoreMask);
         }
