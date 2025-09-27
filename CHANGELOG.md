@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/Preliy/Flange/compare/v1.0.10...v1.0.11) (2025-09-27)
+
+
+### Bug Fixes
+
+* **3DDelta:** init joint offset ([a59f1bf](https://github.com/Preliy/Flange/commit/a59f1bfc21ae3cc710da5c52eed7142faab731f5))
+
 ## [1.0.10](https://github.com/Preliy/Flange/compare/v1.0.9...v1.0.10) (2025-05-29)
 
 
